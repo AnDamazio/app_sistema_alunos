@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="public/images/favicon.png" />
+    <!-- seo -->
+    <meta name="description" content="Resumo do meu site que vai aparecer no buscador da pessoa.">
+    <meta name="keywords" content="landing page, etec, barueri, etec de barueri">
+    <!-- fim seo -->
+    <title>Sistema escolar</title>
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- fim css -->
+    <!--Javascript Pesonalizado-->
+    <script src="javascript/javascript.js"></script>
+    <!--Fim Javascript Pesonalizado-->
+</head>
+
+<body onload="">
+    <div class="container" style="background-color: gainsboro;">
+        
+        <!--Formulários início-->
+            <form class="row">
+                <div class="form-group col-md-6 mt-3">
+                    <input type="text" id="nomepesquisa" class="form-control" placeholder="Nome">
+                    <input type="text" id="mediapesquisa" class="form-control mb-4" placeholder="Média">
+                    <button class="btn btn-primary" onclick="">Pesquisar</button>
+                    <small class=""><a href="index.html">Ou adicionar</a></small>
+                   </div>
+
+               <div class="form-group col-md-6 mt-3">
+                <input type="text" id="rapesquisa"  class="form-control" placeholder="RA">
+                <input type="number" id="bpesquisa" min="1" max="4" class="form-control" placeholder="Bimestre">
+                </div>
+            </form>
+         <!--Formulários fim-->   
+            
+         <!--Tabela alunos ínicio-->
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">RA</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">1ºbimestre</th>
+                        <th scope="col">2ºbimestre</th>
+                        <th scope="col">3ºbimestre</th>
+                        <th scope="col">4ºbimestre</th>
+                        <th scope="col">Média</th>
+                    </tr>
+                </thead>
+                <tbody id="listaCorpoPesquisa">
+                </tbody>
+            </table>
+         <!--Tabela alunos fim-->
+
+    </div>
+
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+<!-- fim scripts -->
+</body>
+</html>
