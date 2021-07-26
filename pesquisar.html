@@ -13,51 +13,86 @@
     <title>Sistema escolar</title>
     <!-- css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <!-- fim css -->
     <!--Javascript Pesonalizado-->
     <script src="javascript/javascript.js"></script>
     <!--Fim Javascript Pesonalizado-->
 </head>
 
-<body onload="">
+<body onload="carregarAlunos()">
     <div class="container" style="background-color: gainsboro;">
         
         <!--Formulários início-->
-            <form class="row">
-                <div class="form-group col-md-6 mt-3">
-                    <input type="text" id="nomepesquisa" class="form-control" placeholder="Nome">
-                    <input type="text" id="mediapesquisa" class="form-control mb-4" placeholder="Média">
-                    <button class="btn btn-primary" onclick="">Pesquisar</button>
-                    <small class=""><a href="index.html">Ou adicionar</a></small>
-                   </div>
-
-               <div class="form-group col-md-6 mt-3">
-                <input type="text" id="rapesquisa"  class="form-control" placeholder="RA">
-                <input type="number" id="bpesquisa" min="1" max="4" class="form-control" placeholder="Bimestre">
-                </div>
+            <form class="row"></form>
+            <div class="form-group col-md-6 mt-3">
+                <input type="text" id="nome" class="form-control" placeholder="Nome">
+                <input type="text" id="media" class="form-control " placeholder="Média">
+                <input type="text" id="ra"  class="form-control mb-" placeholder="RA">
+                <button class="btn btn-primary" onclick="filtrarAlunos()">Pesquisar</button>
+                <small class=""><a href="index.html">Ou adicionar</a></small>
+            </div>
             </form>
          <!--Formulários fim-->   
             
          <!--Tabela alunos ínicio-->
+         <font size="1">
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
                         <th scope="col">RA</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">1ºbimestre</th>
-                        <th scope="col">2ºbimestre</th>
-                        <th scope="col">3ºbimestre</th>
-                        <th scope="col">4ºbimestre</th>
-                        <th scope="col">Média</th>
+                        <th scope="col" id="tb1">1ºB</th>
+                        <th scope="col" id="tb2">2ºB</th>
+                        <th scope="col" id="tb3">3ºB</th>
+                        <th scope="col" id="tb4">4ºB</th>
+                        <th scope="col" id="b1">Média</th>
                     </tr>
                 </thead>
-                <tbody id="listaCorpoPesquisa">
+                <tbody id="tbody">
                 </tbody>
             </table>
+        </font>
          <!--Tabela alunos fim-->
 
     </div>
 
+<script>
+    //Gerência do tamanho da tela
+
+const mediaQuery = window.matchMedia('(min-width: 991.98px)')
+const mediaQuery2 = window.matchMedia('(min-width: 575.98px)')
+
+function handleTabletChange(e) {
+
+    // Check if the media query is true
+    if (e.matches) {
+      // Then log the following message to the console
+      document.getElementById('tb1').innerHTML = '1ºBimestre'
+      document.getElementById('tb2').innerHTML = '1ºBimestre'
+      document.getElementById('tb3').innerHTML = '1ºBimestre'
+      document.getElementById('tb4').innerHTML = '1ºBimestre'
+    }
+
+}
+
+function handleTabletChange2(a) {
+    if (a.matches) {
+      // Then log the following message to the console
+      document.getElementById('tb1').innerHTML = '1ºB'
+      document.getElementById('tb2').innerHTML = '1ºB'
+      document.getElementById('tb3').innerHTML = '1ºB'
+      document.getElementById('tb4').innerHTML = '1ºB'
+    }
+}
+
+mediaQuery.addListener(handleTabletChange)
+mediaQuery2.addListener(handleTabletChange2)
+
+handleTabletChange(mediaQuery)
+handleTabletChange2(mediaQuery2)
+
+</script>
 <!-- scripts -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
